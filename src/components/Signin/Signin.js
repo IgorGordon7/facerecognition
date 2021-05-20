@@ -74,10 +74,6 @@ class Signin extends Component {
                                 value="Sign in"
                             />
                         </div>
-                        <div className="lh-copy mt3">
-                            <p onClick={() => onRouteChange('register')}
-                               className="f6 link dim black db pointer">Register</p>
-                        </div>
                     </div>
                 </main>
             </article>

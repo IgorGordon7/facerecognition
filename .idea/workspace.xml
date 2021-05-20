@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36001966-21f0-4aab-9fed-ff9eb4182481" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Register/Register.js" afterDir="false" />
+    <list default="true" id="36001966-21f0-4aab-9fed-ff9eb4182481" name="Default Changelist" comment="Add connection to Node.js server and customizing Login and Register components with Rank">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Rank/Rank.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Rank/Rank.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Signin/Signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signin/Signin.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +133,7 @@
       <workItem from="1621169940254" duration="18368000" />
       <workItem from="1621250941930" duration="780000" />
       <workItem from="1621251799802" duration="8204000" />
-      <workItem from="1621285186699" duration="12700000" />
+      <workItem from="1621285186699" duration="15533000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;Install tachyons&#10;Adding css linear gradient&#10;Adding Navigation button">
       <created>1621172523001</created>
@@ -184,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621254635455</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add connection to Node.js server and customizing Login and Register components with Rank">
+      <created>1621512980415</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1621512980416</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -249,7 +249,8 @@
     <MESSAGE value="Add image link form" />
     <MESSAGE value="Add Rank and particles to background style" />
     <MESSAGE value="Add Face recognition to multiple pictures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Face recognition to multiple pictures" />
+    <MESSAGE value="Add connection to Node.js server and customizing Login and Register components with Rank" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add connection to Node.js server and customizing Login and Register components with Rank" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
