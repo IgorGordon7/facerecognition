@@ -47,7 +47,7 @@ class Register extends Component {
                                 error: ''
                             })
                             this.props.loadUser(value)
-                            this.props.onRouteChange('home');
+                            this.props.onRouteChange('signin');
                         }
                     }
                 })

@@ -5,11 +5,23 @@ import App from './App';
 import 'tachyons';
 import reportWebVitals from './reportWebVitals';
 
+import {Provider} from "react-redux";
+import {createStore, applyMiddleware, combineReducers} from "redux";
+import {createLogger} from "redux-logger/src";
+import thunkMiddleware from 'redux-thunk'
+import {getUrlFromInput, inputToUrl, getBoxes, changeRoute, getIfSignedIn, getUser} from "./reducers";
+
+const logger = createLogger()
+const rootReducer = combineReducers({getUrlFromInput, inputToUrl, getBoxes, changeRoute, getIfSignedIn, getUser})
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger))
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

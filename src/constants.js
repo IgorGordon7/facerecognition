@@ -1,0 +1,6 @@
+export const CHANGE_INPUT_FIELD = 'CHANGE_INPUT_FIELD'
+export const INPUT_TO_URL = 'INPUT_TO_URL'
+export const GET_FACE_BOX = 'GET_FACE_BOX'
+export const CHANGE_ROUTE = 'CHANGE_ROUTE'
+export const IS_SIGNED_IN = 'IS_SIGNED_IN'
+export const GET_USER_DATA = 'GET_USER_DATA'
