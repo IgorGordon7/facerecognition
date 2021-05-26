@@ -1,13 +1,12 @@
 import {
     CHANGE_INPUT_FIELD,
-    API_REQUEST_PENDING,
-    API_REQUEST_SUCCESS,
-    API_REQUEST_FAILED,
     INPUT_TO_URL,
     GET_FACE_BOX,
     CHANGE_ROUTE,
     IS_SIGNED_IN,
-    GET_USER_DATA
+    GET_USER_DATA,
+    SIGN_IN_DATA_EMAIL, SIGN_IN_DATA_PASSWORD,
+    SIGN_IN_FETCH_PENDING, SIGN_IN_FETCH_SUCCESS, SIGN_IN_FETCH_FAILED
 } from "./constants";
 
 const initialStateInput = {
@@ -38,6 +37,20 @@ const initialStateUser = {
         entries: 0,
         joined: ''
     }
+}
+
+const initialStateSignInDataEmail = {
+    signInEmail: ''
+}
+
+const initialStateSignInDataPassword = {
+    signInPassword: ''
+}
+
+const initialStateSignInForSubmit = {
+    isPending: false,
+    data: '',
+    error: ''
 }
 
 
@@ -94,4 +107,33 @@ export const getUser = (state = initialStateUser, action = {}) => {
     }
 }
 
+export const getSignInDataEmail = (state = initialStateSignInDataEmail, action = {}) => {
+    switch (action.type) {
+        case SIGN_IN_DATA_EMAIL:
+            return {...state, signInEmail: action.payload}
+        default:
+            return state
+    }
+}
 
+export const getSignInDataPassword = (state = initialStateSignInDataPassword, action = {}) => {
+    switch (action.type) {
+        case SIGN_IN_DATA_PASSWORD:
+            return {...state, signInPassword: action.payload}
+        default:
+            return state
+    }
+}
+
+export const getSignInDataForSubmit = (state = initialStateSignInForSubmit, action = {}) => {
+    switch (action.type) {
+        case SIGN_IN_FETCH_PENDING:
+            return {...state, isPending: true}
+        case  SIGN_IN_FETCH_SUCCESS:
+            return {...state, data: action.payload, isPending: false}
+        case SIGN_IN_FETCH_FAILED:
+            return {...state, error: action.payload, isPending: false}
+        default:
+            return state
+    }
+}

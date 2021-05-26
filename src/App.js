@@ -10,7 +10,7 @@ import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import './App.css'
 import {connect} from "react-redux";
-import {setFaceBox, setInputField, setInputToUrl, setRoute, setSignIn, setUser, requestApi} from "./actions";
+import {setFaceBox, setInputField, setInputToUrl, setRoute, setSignIn, setUser} from "./actions";
 
 
 const app = new Clarifai.App({
@@ -37,18 +37,13 @@ const mapStateToProps = (state) => {
         boxes: state.getBoxes.boxes,
         isSignedIn: state.getIfSignedIn.isSignedIn,
         route: state.changeRoute.route,
-        user: state.getUser.user
+        user: state.getUser.user,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
 
     return {
-        onInputChange: (event) => dispatch(setInputField(event.target.value)),
-        onGetUrlFromInput: (text) => dispatch(setInputToUrl(text)),
-        displayFaceBox: (array) => dispatch(setFaceBox(array)),
-        ifSignedIn: (bool) => dispatch(setSignIn(bool)),
-        loadUser: (user) => dispatch(setUser(user)),
         onRouteChange: (route) => {
             if (route === 'signout') {
                 dispatch(setSignIn(false))
@@ -58,7 +53,10 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(setRoute(route))
 
         },
-
+        onInputChange: (event) => dispatch(setInputField(event.target.value)),
+        onGetUrlFromInput: (text) => dispatch(setInputToUrl(text)),
+        displayFaceBox: (array) => dispatch(setFaceBox(array)),
+        loadUser: (user) => dispatch(setUser(user)),
     }
 }
 

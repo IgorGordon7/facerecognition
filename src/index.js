@@ -9,10 +9,23 @@ import {Provider} from "react-redux";
 import {createStore, applyMiddleware, combineReducers} from "redux";
 import {createLogger} from "redux-logger/src";
 import thunkMiddleware from 'redux-thunk'
-import {getUrlFromInput, inputToUrl, getBoxes, changeRoute, getIfSignedIn, getUser} from "./reducers";
+import {
+    getUrlFromInput,
+    inputToUrl,
+    getBoxes,
+    changeRoute,
+    getIfSignedIn,
+    getUser,
+    getSignInDataEmail,
+    getSignInDataPassword,
+    getSignInDataForSubmit
+} from "./reducers";
 
 const logger = createLogger()
-const rootReducer = combineReducers({getUrlFromInput, inputToUrl, getBoxes, changeRoute, getIfSignedIn, getUser})
+const rootReducer = combineReducers({
+    getUrlFromInput, inputToUrl, getBoxes, changeRoute, getIfSignedIn, getUser, getSignInDataEmail,
+    getSignInDataPassword, getSignInDataForSubmit
+})
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger))
 
 ReactDOM.render(
