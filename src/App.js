@@ -10,7 +10,7 @@ import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import './App.css'
 import {connect} from "react-redux";
-import {setFaceBox, setInputField, setInputToUrl, setRoute, setSignIn, setUser} from "./actions";
+import {setFaceBox, setInputField, setInputToUrl, setRoute, setSignIn} from "./actions";
 
 
 const app = new Clarifai.App({
@@ -56,7 +56,6 @@ const mapDispatchToProps = (dispatch) => {
         onInputChange: (event) => dispatch(setInputField(event.target.value)),
         onGetUrlFromInput: (text) => dispatch(setInputToUrl(text)),
         displayFaceBox: (array) => dispatch(setFaceBox(array)),
-        loadUser: (user) => dispatch(setUser(user)),
     }
 }
 
@@ -121,7 +120,7 @@ class App extends Component {
 
 
     render() {
-        const {onInputChange, imageUrl, boxes, route, onRouteChange, isSignedIn, user, loadUser} = this.props
+        const {onInputChange, imageUrl, boxes, route, onRouteChange, isSignedIn, user} = this.props
         return (
             <div className="App">
                 <Particles className='particles'
@@ -140,10 +139,9 @@ class App extends Component {
                     :
                     (
                         route === 'signin'
-                            ? <Signin loadUser={loadUser} onRouteChange={onRouteChange}/>
-                            : <Register loadUser={loadUser} onRouteChange={onRouteChange}/>
+                            ? <Signin/>
+                            : <Register/>
                     )
-
                 }
             </div>
         );

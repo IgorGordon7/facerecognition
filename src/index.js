@@ -18,13 +18,30 @@ import {
     getUser,
     getSignInDataEmail,
     getSignInDataPassword,
-    getSignInDataForSubmit
+    getSignInDataForSubmit,
+    getRegisterName,
+    getRegisterEmail,
+    getRegisterPassword,
+    getRegisterError,
+    getRegisterDataForSubmit
 } from "./reducers";
 
 const logger = createLogger()
 const rootReducer = combineReducers({
-    getUrlFromInput, inputToUrl, getBoxes, changeRoute, getIfSignedIn, getUser, getSignInDataEmail,
-    getSignInDataPassword, getSignInDataForSubmit
+    getUrlFromInput,
+    inputToUrl,
+    getBoxes,
+    changeRoute,
+    getIfSignedIn,
+    getUser,
+    getSignInDataEmail,
+    getSignInDataPassword,
+    getSignInDataForSubmit,
+    getRegisterName,
+    getRegisterEmail,
+    getRegisterPassword,
+    getRegisterError,
+    getRegisterDataForSubmit
 })
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger))
 

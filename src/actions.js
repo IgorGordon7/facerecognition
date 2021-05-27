@@ -7,7 +7,9 @@ import {
     GET_USER_DATA,
     SIGN_IN_DATA_EMAIL,
     SIGN_IN_DATA_PASSWORD,
-    SIGN_IN_FETCH_PENDING, SIGN_IN_FETCH_SUCCESS, SIGN_IN_FETCH_FAILED
+    SIGN_IN_FETCH_PENDING, SIGN_IN_FETCH_SUCCESS, SIGN_IN_FETCH_FAILED,
+    REGISTER_NAME, REGISTER_EMAIL, REGISTER_PASSWORD, REGISTER_ERROR,
+    REGISTER_FETCH_PENDING, REGISTER_FETCH_SUCCESS, REGISTER_FETCH_FAILED
 } from './constants'
 
 export const setInputField = (text) => {
@@ -65,9 +67,36 @@ export const setSignInDataPassword = (password) => {
         payload: password
     }
 }
+
+export const setRegisterName = (name) => {
+    return {
+        type: REGISTER_NAME,
+        payload: name
+    }
+}
+
+export const setRegisterEmail = (email) => {
+    return {
+        type: REGISTER_EMAIL,
+        payload: email
+    }
+}
+
+export const setRegisterPassword = (pass) => {
+    return {
+        type: REGISTER_PASSWORD,
+        payload: pass
+    }
+}
+
+export const setRegisterError = (error) => {
+    return {
+        type: REGISTER_ERROR,
+        payload: error
+    }
+}
+
 export const setSignInDataForSubmit = (signInEmail, signInPassword) => (dispatch) => {
-    console.log('EMAIL', signInEmail)
-    console.log('PASS', signInPassword)
     dispatch({type: SIGN_IN_FETCH_PENDING})
     fetch('http://localhost:3000/signin', {
         method: 'post',
@@ -92,7 +121,36 @@ export const setSignInDataForSubmit = (signInEmail, signInPassword) => (dispatch
         .catch(error => dispatch({type: SIGN_IN_FETCH_FAILED, payload: error}))
 }
 
-
+export const setRegisterDataForSubmit = (registerEmail, registerPass, registerName) => (dispatch) => {
+    dispatch({type: REGISTER_FETCH_PENDING})
+    fetch('http://localhost:3000/register', {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            email: registerEmail,
+            password: registerPass,
+            name: registerName
+        })
+    })
+        .then(res => {
+            res.json().then(value => {
+                if (value === "Unable to Register") {
+                    dispatch(setRegisterError('Your email is in use'))
+                } else {
+                    if (value) {
+                        dispatch(setRegisterError(''))
+                        dispatch(setUser(value))
+                        dispatch(setRoute('signin'))
+                    }
+                }
+            })
+        })
+        .then(data => {
+                dispatch({type: REGISTER_FETCH_SUCCESS, payload: data})
+            }
+        )
+        .catch(error => dispatch({type: REGISTER_FETCH_FAILED, payload: error}))
+}
 
 
 

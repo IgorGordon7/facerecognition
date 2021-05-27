@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Signin/Signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signin/Signin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers.js" afterDir="false" />
@@ -139,7 +139,7 @@
       <workItem from="1621169940254" duration="18368000" />
       <workItem from="1621250941930" duration="780000" />
       <workItem from="1621251799802" duration="8204000" />
-      <workItem from="1621285186699" duration="67344000" />
+      <workItem from="1621285186699" duration="74516000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit&#10;Install tachyons&#10;Adding css linear gradient&#10;Adding Navigation button">
       <created>1621172523001</created>
@@ -204,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621948922676</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add redux-thunk to SignIn">
+      <created>1622053078918</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1622053078918</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -272,7 +279,8 @@
     <MESSAGE value="Add connection to Node.js server and customizing Login and Register components with Rank" />
     <MESSAGE value="remove register option below sign in button" />
     <MESSAGE value="Add redux(actions,reducers,store) for state management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add redux(actions,reducers,store) for state management" />
+    <MESSAGE value="Add redux-thunk to SignIn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add redux-thunk to SignIn" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
